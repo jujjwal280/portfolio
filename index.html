@@ -4,22 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ujjwal Jain | Portfolio</title>
+  <title>Ujjwal Jain | Advanced Portfolio</title>
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Typed.js -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- ScrollReveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
+  <!-- Animated Background -->
+  <div id="animated-bg"></div>
 
   <!-- Scroll progress bar -->
   <div id="scroll-progress"></div>
@@ -29,250 +32,497 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Loading Portfolio...</div>
+    </div>
+  </div>
+
   <header>
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
-      <h1>Ujjwal Jain</h1>
+      <div class="nav-brand">
+        <h1>Ujjwal Jain</h1>
+        <span class="nav-subtitle">Developer & Innovator</span>
+      </div>
       <ul class="nav-links">
         <li><a href="#about" class="nav-item">About</a></li>
         <li><a href="#projects" class="nav-item">Projects</a></li>
         <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#experience" class="nav-item">Experience</a></li>
         <li><a href="#contact" class="nav-item">Contact</a></li>
         <li><a href="#resume" class="nav-item">Resume</a></li>
       </ul>
-      <button id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle Dark/Light Mode">
-        <i class="fas fa-moon"></i>
-      </button>
+      <div class="nav-controls">
+        <button id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero" role="banner">
-      <img src="assets/Dp.jpg" alt="Profile picture of Ujjwal Jain" class="profile-pic" />
-      <h2>Hello, I'm <span>Ujjwal Jain</span></h2>
-      <p><span id="typed-text"></span></p>
+      <div class="hero-content">
+        <div class="profile-container">
+          <img src="assets/Dp.jpg" alt="Profile picture of Ujjwal Jain" class="profile-pic" />
+          <div class="profile-ring"></div>
+        </div>
+        <h2>Hello, I'm <span class="highlight">Ujjwal Jain</span></h2>
+        <p class="hero-subtitle"><span id="typed-text"></span></p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="100">0</span>
+            <span class="stat-label">Code Quality</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Work</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Get In Touch</span>
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+      </div>
     </section>
 
     <section id="about" class="content-section" tabindex="-1">
-      <h2>About Me</h2>
-      <p>
-        I am currently pursuing B.Tech in Artificial Intelligence and Machine Learning at KIET Group of Institutions,
-        Delhi-NCR. I'm passionate about mobile development, machine learning, and cybersecurity.
-      </p>
+      <div class="section-header">
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="lead">
+            I am currently pursuing B.Tech in Artificial Intelligence and Machine Learning at KIET Group of
+            Institutions,
+            Delhi-NCR. I'm passionate about creating innovative solutions through mobile development, machine learning,
+            and cybersecurity.
+          </p>
+          <p>
+            My journey in technology started with curiosity and has evolved into a passion for building applications
+            that make a difference.
+            I believe in continuous learning and staying updated with the latest technologies and trends.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-code"></i>
+              <span>Full-Stack Development</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-brain"></i>
+              <span>AI & Machine Learning</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>Cybersecurity</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-mobile-alt"></i>
+              <span>Mobile Development</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="about-card">
+            <div class="card-glow"></div>
+            <i class="fas fa-laptop-code"></i>
+            <h3>Passionate Developer</h3>
+            <p>Always learning, always coding</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="projects" class="content-section" tabindex="-1">
-      <h2>Projects</h2>
-      <div class="carousel-container">
-        <button class="carousel-btn prev" aria-label="Previous project">&#10094;</button>
-        <div class="carousel" tabindex="0" role="list">
-          <div class="project" role="listitem" tabindex="0" aria-pressed="false"
-            onclick="showPopup('popup-moneyMinder')" onkeydown="if(event.key==='Enter') showPopup('popup-moneyMinder')">
-            <h3>MoneyMinder: Personal Finance Budgeting App</h3>
-            <p>Built using Flutter, Firebase, and ARIMA for AI-driven expense prediction.</p>
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-category="mobile ai" onclick="showPopup('popup-moneyMinder')">
+          <div class="project-image">
+            <i class="fas fa-wallet"></i>
           </div>
-          <div class="project" role="listitem" tabindex="0" aria-pressed="false"
-            onclick="showPopup('popup-fingerCount')" onkeydown="if(event.key==='Enter') showPopup('popup-fingerCount')">
-            <h3>Finger Count</h3>
-            <p>Real-time finger count app using OpenCV and TensorFlow.</p>
+          <div class="project-content">
+            <h3>MoneyMinder</h3>
+            <p>Personal Finance Budgeting App with AI-driven expense prediction using Flutter, Firebase, and ARIMA.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">ARIMA</span>
+            </div>
           </div>
-          <div class="project" role="listitem" tabindex="0" aria-pressed="false"
-            onclick="showPopup('popup-cyberSecLab')" onkeydown="if(event.key==='Enter') showPopup('popup-cyberSecLab')">
-            <h3>Cybersecurity Lab</h3>
-            <p>Packet analysis and web security using Wireshark and DVWA.</p>
+          <div class="project-overlay">
+            <div class="overlay-content">
+              <h3>MoneyMinder</h3>
+              <p>Click to learn more</p>
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
         </div>
-        <button class="carousel-btn next" aria-label="Next project">&#10095;</button>
+
+        <div class="project-card" data-category="ai" onclick="showPopup('popup-fingerCount')">
+          <div class="project-image">
+            <i class="fas fa-hand-paper"></i>
+          </div>
+          <div class="project-content">
+            <h3>Finger Count</h3>
+            <p>Real-time finger counting application using computer vision with OpenCV and TensorFlow.</p>
+            <div class="project-tech">
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <div class="overlay-content">
+              <h3>Finger Count</h3>
+              <p>Click to learn more</p>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="security" onclick="showPopup('popup-cyberSecLab')">
+          <div class="project-image">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="project-content">
+            <h3>Cybersecurity Lab</h3>
+            <p>Comprehensive packet analysis and web security testing using Wireshark and DVWA.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Wireshark</span>
+              <span class="tech-tag">DVWA</span>
+              <span class="tech-tag">Security</span>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <div class="overlay-content">
+              <h3>Cybersecurity Lab</h3>
+              <p>Click to learn more</p>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="skills" class="content-section" tabindex="-1">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Flutter</li>
-        <li>Firebase</li>
-        <li>Python</li>
-        <li>Machine Learning</li>
-        <li>Cybersecurity</li>
-        <li>OpenCV</li>
-      </ul>
+      <div class="section-header">
+        <h2>Skills & Technologies</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+              <div class="skill-level" data-level="90"></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+              <div class="skill-level" data-level="85"></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+              <div class="skill-level" data-level="80"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Mobile</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <i class="fas fa-mobile-alt"></i>
+              <span>Flutter</span>
+              <div class="skill-level" data-level="85"></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-android"></i>
+              <span>Android</span>
+              <div class="skill-level" data-level="75"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>AI/ML</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+              <div class="skill-level" data-level="90"></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-brain"></i>
+              <span>TensorFlow</span>
+              <div class="skill-level" data-level="70"></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-eye"></i>
+              <span>OpenCV</span>
+              <div class="skill-level" data-level="75"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <i class="fas fa-fire"></i>
+              <span>Firebase</span>
+              <div class="skill-level" data-level="80"></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>Cybersecurity</span>
+              <div class="skill-level" data-level="70"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="content-section" tabindex="-1">
+      <div class="section-header">
+        <h2>Experience & Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>B.Tech AI & ML</h3>
+            <h4>KIET Group of Institutions</h4>
+            <span class="timeline-date">2021 - Present</span>
+            <p>Pursuing Bachelor's in Artificial Intelligence and Machine Learning with focus on practical applications
+              and research.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Mobile App Developer</h3>
+            <h4>Freelance Projects</h4>
+            <span class="timeline-date">2022 - Present</span>
+            <p>Developed multiple mobile applications using Flutter and Firebase, focusing on user experience and
+              performance.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Cybersecurity Research</h3>
+            <h4>Academic Projects</h4>
+            <span class="timeline-date">2023 - Present</span>
+            <p>Conducted research on network security, packet analysis, and web application vulnerabilities.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="contact" class="content-section" tabindex="-1">
-      <h2>Contact</h2>
-      <form id="contact-form" aria-label="Contact form">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required />
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn-submit">Send</button>
-        <div id="form-message" role="alert" aria-live="polite"></div>
-      </form>
-
-      <div class="contact-info" aria-label="Contact information">
-        <p>Email: <a href="mailto:ujjwal.jain@example.com">ujjwal.jain@example.com</a></p>
-        <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:ujjwal.jain@example.com">ujjwal.jain@example.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>Phone</h3>
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Location</h3>
+              <span>Delhi-NCR, India</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <form id="contact-form" class="contact-form" aria-label="Contact form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <div id="form-message" role="alert" aria-live="polite"></div>
+        </form>
       </div>
     </section>
 
     <section id="resume" class="content-section" tabindex="-1">
-      <h2>Resume</h2>
-      <p>
-        Download my <a href="assets/UjjwalJain_Resume.pdf" target="_blank" rel="noopener">resume (PDF)</a>.
-      </p>
+      <div class="section-header">
+        <h2>Resume</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="resume-container">
+        <p>Download my complete resume to learn more about my experience and qualifications.</p>
+        <a href="assets/UjjwalJain_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fas fa-download"></i>
+          <span>Download Resume</span>
+        </a>
+      </div>
     </section>
   </main>
 
   <!-- Overlay for popups -->
   <div id="overlay" aria-hidden="true"></div>
 
-  <!-- Popups -->
+  <!-- Enhanced Popups -->
   <div class="popup" id="popup-moneyMinder" role="dialog" aria-modal="true" aria-labelledby="popup-moneyMinder-title"
     tabindex="-1">
     <button class="popup-close" aria-label="Close popup" onclick="closePopup('popup-moneyMinder')">&times;</button>
-    <h3 id="popup-moneyMinder-title">MoneyMinder: Personal Finance Budgeting App</h3>
-    <p>Built using Flutter, Firebase, and ARIMA for AI-driven expense prediction. This app helps users manage expenses
-      smartly using AI forecasting techniques.</p>
+    <div class="popup-header">
+      <i class="fas fa-wallet"></i>
+      <h3 id="popup-moneyMinder-title">MoneyMinder: Personal Finance Budgeting App</h3>
+    </div>
+    <div class="popup-content">
+      <p>A comprehensive personal finance application built with Flutter and Firebase, featuring AI-driven expense
+        prediction using ARIMA models. The app helps users manage their finances intelligently with smart forecasting
+        capabilities.</p>
+      <div class="popup-features">
+        <h4>Key Features:</h4>
+        <ul>
+          <li>Real-time expense tracking</li>
+          <li>AI-powered spending predictions</li>
+          <li>Budget management and alerts</li>
+          <li>Cloud synchronization</li>
+          <li>Beautiful, intuitive UI</li>
+        </ul>
+      </div>
+      <div class="popup-tech">
+        <span class="tech-tag">Flutter</span>
+        <span class="tech-tag">Firebase</span>
+        <span class="tech-tag">ARIMA</span>
+        <span class="tech-tag">Dart</span>
+      </div>
+    </div>
   </div>
 
   <div class="popup" id="popup-fingerCount" role="dialog" aria-modal="true" aria-labelledby="popup-fingerCount-title"
     tabindex="-1">
     <button class="popup-close" aria-label="Close popup" onclick="closePopup('popup-fingerCount')">&times;</button>
-    <h3 id="popup-fingerCount-title">Finger Count</h3>
-    <p>Real-time finger count app built using OpenCV and TensorFlow, designed for interactive hand gesture recognition.
-    </p>
+    <div class="popup-header">
+      <i class="fas fa-hand-paper"></i>
+      <h3 id="popup-fingerCount-title">Finger Count Detection System</h3>
+    </div>
+    <div class="popup-content">
+      <p>An advanced computer vision application that performs real-time finger counting using OpenCV and TensorFlow.
+        The system accurately detects and counts fingers in various lighting conditions and hand positions.</p>
+      <div class="popup-features">
+        <h4>Key Features:</h4>
+        <ul>
+          <li>Real-time hand detection</li>
+          <li>Accurate finger counting</li>
+          <li>Multiple hand support</li>
+          <li>Gesture recognition</li>
+          <li>Cross-platform compatibility</li>
+        </ul>
+      </div>
+      <div class="popup-tech">
+        <span class="tech-tag">OpenCV</span>
+        <span class="tech-tag">TensorFlow</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Computer Vision</span>
+      </div>
+    </div>
   </div>
 
   <div class="popup" id="popup-cyberSecLab" role="dialog" aria-modal="true" aria-labelledby="popup-cyberSecLab-title"
     tabindex="-1">
     <button class="popup-close" aria-label="Close popup" onclick="closePopup('popup-cyberSecLab')">&times;</button>
-    <h3 id="popup-cyberSecLab-title">Cybersecurity Lab</h3>
-    <p>Explored packet analysis and web security techniques using tools like Wireshark and DVWA for practical
-      cybersecurity learning.</p>
+    <div class="popup-header">
+      <i class="fas fa-shield-alt"></i>
+      <h3 id="popup-cyberSecLab-title">Cybersecurity Research Lab</h3>
+    </div>
+    <div class="popup-content">
+      <p>A comprehensive cybersecurity research project focusing on network packet analysis and web application security
+        testing. Used industry-standard tools like Wireshark and DVWA for practical security assessment.</p>
+      <div class="popup-features">
+        <h4>Key Areas:</h4>
+        <ul>
+          <li>Network packet analysis</li>
+          <li>Web application penetration testing</li>
+          <li>Vulnerability assessment</li>
+          <li>Security documentation</li>
+          <li>Ethical hacking techniques</li>
+        </ul>
+      </div>
+      <div class="popup-tech">
+        <span class="tech-tag">Wireshark</span>
+        <span class="tech-tag">DVWA</span>
+        <span class="tech-tag">Kali Linux</span>
+        <span class="tech-tag">Security Testing</span>
+      </div>
+    </div>
   </div>
 
-  <script>
-    // Theme toggle
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    themeToggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      // Change icon accordingly
-      const icon = themeToggleBtn.querySelector('i');
-      if (document.body.classList.contains('dark')) {
-        icon.classList.replace('fa-moon', 'fa-sun');
-      } else {
-        icon.classList.replace('fa-sun', 'fa-moon');
-      }
-    });
-
-    // Typed.js initialization
-    const typed = new Typed('#typed-text', {
-      strings: [
-        "Mobile Developer",
-        "Machine Learning Enthusiast",
-        "Cybersecurity Researcher",
-        "Open Source Contributor"
-      ],
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 2000,
-      loop: true,
-      showCursor: true,
-    });
-
-    // Scroll progress bar
-    const scrollProgress = document.getElementById('scroll-progress');
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      scrollProgress.style.width = scrollPercent + '%';
-    });
-
-    // Scroll to top button
-    const scrollTopBtn = document.getElementById('scroll-top');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.style.display = 'block';
-      } else {
-        scrollTopBtn.style.display = 'none';
-      }
-    });
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-
-    // Popups open/close
-    const overlay = document.getElementById('overlay');
-
-    function showPopup(id) {
-      const popup = document.getElementById(id);
-      popup.style.display = 'block';
-      popup.setAttribute('aria-hidden', 'false');
-      overlay.style.display = 'block';
-      overlay.setAttribute('aria-hidden', 'false');
-      popup.focus();
-    }
-
-    function closePopup(id) {
-      const popup = document.getElementById(id);
-      popup.style.display = 'none';
-      popup.setAttribute('aria-hidden', 'true');
-      overlay.style.display = 'none';
-      overlay.setAttribute('aria-hidden', 'true');
-    }
-
-    // Close popup on overlay click
-    overlay.addEventListener('click', () => {
-      const popups = document.querySelectorAll('.popup');
-      popups.forEach(popup => {
-        if (popup.style.display === 'block') {
-          popup.style.display = 'none';
-          popup.setAttribute('aria-hidden', 'true');
-          overlay.style.display = 'none';
-          overlay.setAttribute('aria-hidden', 'true');
-        }
-      });
-    });
-
-    // Close popup on Escape key
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const popups = document.querySelectorAll('.popup');
-        popups.forEach(popup => {
-          if (popup.style.display === 'block') {
-            closePopup(popup.id);
-          }
-        });
-      }
-    });
-
-    // ScrollReveal animations
-    ScrollReveal().reveal('.hero, #about, #projects, #skills, #contact, #resume', {
-      distance: '30px',
-      duration: 1000,
-      easing: 'ease-in-out',
-      origin: 'bottom',
-      interval: 200,
-    });
-
-    // Carousel basic next/prev for projects
-    const carousel = document.querySelector('.carousel');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-
-    prevBtn.addEventListener('click', () => {
-      carousel.scrollBy({left: -300, behavior: 'smooth'});
-    });
-    nextBtn.addEventListener('click', () => {
-      carousel.scrollBy({left: 300, behavior: 'smooth'});
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
