@@ -3,521 +3,475 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ujjwal Jain | Advanced Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ujjwal Jain | AI & ML Engineer & Developer</title>
 
   <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Style -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Scripts -->
+  <!-- Typed.js & ScrollReveal -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
-<body>
-  <!-- Animated Background -->
-  <div id="animated-bg"></div>
+<body class="dark-mode">
+  <!-- Interactive Particle Mesh Canvas -->
+  <canvas id="particle-canvas"></canvas>
 
-  <!-- Scroll progress bar -->
-  <div id="scroll-progress"></div>
+  <!-- Reading Progress Bar -->
+  <div id="read-progress"></div>
 
-  <!-- Scroll to top -->
-  <button id="scroll-top" aria-label="Scroll to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Loading Screen -->
-  <div id="loading-screen">
-    <div class="loader">
-      <div class="loader-circle"></div>
-      <div class="loader-text">Loading Portfolio...</div>
-    </div>
+  <!-- Quick Floating Control Menu -->
+  <div class="floating-controls">
+    <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+      <i class="fas fa-sun"></i>
+    </button>
+    <button id="top-btn" aria-label="Back to Top" title="Back to Top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
   </div>
 
-  <header>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-      <div class="nav-brand">
-        <h1>Ujjwal Jain</h1>
-        <span class="nav-subtitle">Developer & Innovator</span>
+  <!-- Header Navigation -->
+  <header class="glass-header">
+    <nav class="nav-container">
+      <div class="brand-logo">
+        <span class="logo-accent">&lt;UJ/&gt;</span>
+        <div class="brand-text">
+          <span class="brand-name">Ujjwal Jain</span>
+          <span class="brand-status"><span class="status-dot"></span> B.Tech AI & ML '26</span>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-item">About</a></li>
-        <li><a href="#projects" class="nav-item">Projects</a></li>
-        <li><a href="#skills" class="nav-item">Skills</a></li>
-        <li><a href="#experience" class="nav-item">Experience</a></li>
-        <li><a href="#contact" class="nav-item">Contact</a></li>
-        <li><a href="#resume" class="nav-item">Resume</a></li>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active"><i class="fas fa-terminal"></i> Terminal</a></li>
+        <li><a href="#research" class="nav-link"><i class="fas fa-scroll"></i> Research</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fas fa-cubes"></i> Projects</a></li>
+        <li><a href="#dsa-skills" class="nav-link"><i class="fas fa-code"></i> Skills & DSA</a></li>
+        <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
-      <div class="nav-controls">
-        <button id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle Dark/Light Mode">
-          <i class="fas fa-moon"></i>
-        </button>
-        <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+
+      <div class="mobile-toggle" id="mobile-toggle">
+        <i class="fas fa-bars"></i>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" role="banner">
-      <div class="hero-content">
-        <div class="profile-container">
-          <img src="assets/Dp.jpg" alt="Profile picture of Ujjwal Jain" class="profile-pic" />
-          <div class="profile-ring"></div>
-        </div>
-        <h2>Hello, I'm <span class="highlight">Ujjwal Jain</span></h2>
-        <p class="hero-subtitle"><span id="typed-text"></span></p>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number" data-target="15">0</span>
-            <span class="stat-label">Projects</span>
+    <!-- HERO SECTION WITH INTERACTIVE CLI TERMINAL -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-intro">
+          <div class="badge-pill">
+            <i class="fas fa-graduation-cap"></i> KIET Group of Institutions (8.3 SGPA)
           </div>
-          <div class="stat">
-            <span class="stat-number" data-target="3">0</span>
-            <span class="stat-label">Years Experience</span>
+          <h1>Architecting <span class="gradient-text">AI Solutions</span> & Cross-Platform Apps</h1>
+          <p class="hero-lead">
+            Final-Year AI & ML Student | IEEE-Published Researcher | 500+ Solved DSA Problems
+          </p>
+          <div class="typing-container">
+            <span class="prompt-symbol">&gt;</span> <span id="typed-roles"></span>
           </div>
-          <div class="stat">
-            <span class="stat-number" data-target="100">0</span>
-            <span class="stat-label">Code Quality</span>
-          </div>
-        </div>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
-            <span>View My Work</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <span>Get In Touch</span>
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-      <div class="hero-scroll-indicator">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span>Scroll to explore</span>
-      </div>
-    </section>
 
-    <section id="about" class="content-section" tabindex="-1">
-      <div class="section-header">
-        <h2>About Me</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p class="lead">
-            I am currently pursuing B.Tech in Artificial Intelligence and Machine Learning at KIET Group of
-            Institutions,
-            Delhi-NCR. I'm passionate about creating innovative solutions through mobile development, machine learning,
-            and cybersecurity.
-          </p>
-          <p>
-            My journey in technology started with curiosity and has evolved into a passion for building applications
-            that make a difference.
-            I believe in continuous learning and staying updated with the latest technologies and trends.
-          </p>
-          <div class="about-highlights">
-            <div class="highlight-item">
-              <i class="fas fa-code"></i>
-              <span>Full-Stack Development</span>
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-glow"><i class="fas fa-rocket"></i> View Portfolio Work</a>
+            <a href="https://ieeexplore.ieee.org/document/11468787" target="_blank" rel="noopener" class="btn btn-glass"><i class="fas fa-file-pdf"></i> IEEE Paper</a>
+            <a href="mailto:jujjwal280@gmail.com" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
+          </div>
+
+          <!-- Live Metrics Counter Strip -->
+          <div class="metric-strip">
+            <div class="metric-card">
+              <span class="metric-num" data-target="350">0</span><span class="plus">+</span>
+              <span class="metric-lbl">LeetCode Solved</span>
             </div>
-            <div class="highlight-item">
-              <i class="fas fa-brain"></i>
-              <span>AI & Machine Learning</span>
+            <div class="metric-card">
+              <span class="metric-num" data-target="8" data-dec="1">0</span>
+              <span class="metric-lbl">Academic SGPA</span>
             </div>
-            <div class="highlight-item">
-              <i class="fas fa-shield-alt"></i>
-              <span>Cybersecurity</span>
+            <div class="metric-card">
+              <span class="metric-num" data-target="35">0</span><span>%</span>
+              <span class="metric-lbl">Latency Reduction</span>
             </div>
-            <div class="highlight-item">
-              <i class="fas fa-mobile-alt"></i>
-              <span>Mobile Development</span>
+            <div class="metric-card">
+              <span class="metric-num" data-target="1">0</span>
+              <span class="metric-lbl">IEEE Xplore Paper</span>
             </div>
           </div>
         </div>
-        <div class="about-image">
-          <div class="about-card">
-            <div class="card-glow"></div>
-            <i class="fas fa-laptop-code"></i>
-            <h3>Passionate Developer</h3>
-            <p>Always learning, always coding</p>
+
+        <!-- Interactive Terminal CLI Component -->
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <div class="terminal-buttons">
+              <span class="t-btn close"></span>
+              <span class="t-btn minimize"></span>
+              <span class="t-btn maximize"></span>
+            </div>
+            <span class="terminal-title">ujjwal@developer-shell:~ (bash)</span>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-line"><span class="t-success">System initialized.</span> Type <span class="t-cmd">'help'</span> for interactive commands.</div>
+            <div class="terminal-line"><span class="t-prompt">ujjwal@kiet:~$</span> <span class="t-out">cat profile_summary.txt</span></div>
+            <div class="terminal-line t-desc">
+              Author of IEEE-published survey paper on AI financial systems. Specialized in Flutter, Firebase, ARIMA/LSTM time-series models, and Wireshark vulnerability assessments.
+            </div>
+          </div>
+          <div class="terminal-quick-cmds">
+            <button onclick="runCommand('skills')">skills</button>
+            <button onclick="runCommand('projects')">projects</button>
+            <button onclick="runCommand('research')">research</button>
+            <button onclick="runCommand('contact')">contact</button>
+            <button onclick="runCommand('clear')">clear</button>
+          </div>
+          <div class="terminal-input-row">
+            <span class="t-prompt">ujjwal@kiet:~$</span>
+            <input type="text" id="terminal-input" placeholder="Type a command (e.g. help)..." autocomplete="off" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="content-section" tabindex="-1">
-      <div class="section-header">
-        <h2>Featured Projects</h2>
-        <div class="section-line"></div>
+    <!-- RESEARCH SPOTLIGHT SECTION -->
+    <section id="research" class="section-padding">
+      <div class="section-title-wrap">
+        <span class="sub-heading">// IEEE PUBLICATION</span>
+        <h2>Peer-Reviewed Research</h2>
+        <div class="heading-line"></div>
       </div>
-      <div class="projects-filter">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="mobile">Mobile</button>
-        <button class="filter-btn" data-filter="ai">AI/ML</button>
-        <button class="filter-btn" data-filter="security">Security</button>
+
+      <div class="research-box glass-panel">
+        <div class="research-header">
+          <div class="ieee-badge"><i class="fas fa-certificate"></i> IEEE Xplore Document #11468787</div>
+          <span class="pub-date"><i class="far fa-calendar-alt"></i> April 2026</span>
+        </div>
+        <h3>AI-Driven Personal Finance Systems: Methods, Limitations, and Open Challenges</h3>
+        <p class="conference-name">ICCSC 2026 - International Conference on Computer, Smart Technologies and Communication | ABES Engineering College</p>
+        <p class="research-summary">
+          Authored and presented a survey paper covering ML-based personal finance automation, time-series forecasting models (ARIMA & LSTM), and open research challenges in automated expense predictions.
+        </p>
+        <div class="research-actions">
+          <a href="https://ieeexplore.ieee.org/document/11468787" target="_blank" rel="noopener" class="btn btn-glow">
+            <i class="fas fa-external-link-alt"></i> Access Publication on IEEE Xplore
+          </a>
+        </div>
       </div>
+    </section>
+
+    <!-- INTERACTIVE PROJECTS HUB -->
+    <section id="projects" class="section-padding">
+      <div class="section-title-wrap">
+        <span class="sub-heading">// PORTFOLIO WORK</span>
+        <h2>Featured Engineering Projects</h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="project-filter-bar">
+        <button class="p-filter-btn active" data-filter="all">All Projects</button>
+        <button class="p-filter-btn" data-filter="ai">AI / ML</button>
+        <button class="p-filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="p-filter-btn" data-filter="security">Cybersecurity</button>
+      </div>
+
       <div class="projects-grid">
-        <div class="project-card" data-category="mobile ai" onclick="showPopup('popup-moneyMinder')">
-          <div class="project-image">
-            <i class="fas fa-wallet"></i>
+        <!-- MoneyMinder -->
+        <div class="project-card glass-panel" data-category="ai mobile">
+          <div class="p-card-top">
+            <i class="fas fa-wallet p-icon"></i>
+            <span class="p-badge">Innotech Fest '24</span>
           </div>
-          <div class="project-content">
-            <h3>MoneyMinder</h3>
-            <p>Personal Finance Budgeting App with AI-driven expense prediction using Flutter, Firebase, and ARIMA.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">ARIMA</span>
+          <h3>MoneyMinder</h3>
+          <p class="p-sub">AI-Powered Personal Finance & Expense Forecasting App</p>
+          <p class="p-desc">Built with Flutter, Firebase, and ARIMA/LSTM models. Reduced Firestore latency by ~35% through query optimization.</p>
+          <div class="p-tags">
+            <span>Flutter</span><span>Firebase</span><span>Python</span><span>ARIMA</span><span>LSTM</span>
+          </div>
+          <button class="btn btn-glass btn-full" onclick="openProjectModal('moneyminder')">
+            <i class="fas fa-sliders-h"></i> Interactive Details
+          </button>
+        </div>
+
+        <!-- College ERP -->
+        <div class="project-card glass-panel" data-category="mobile">
+          <div class="p-card-top">
+            <i class="fas fa-university p-icon"></i>
+            <span class="p-badge">Live Enterprise</span>
+          </div>
+          <h3>College ERP - Attendance System</h3>
+          <p class="p-sub">Full-Stack Academic ERP for 200+ Students</p>
+          <p class="p-desc">Replaced manual attendance registers. Offers role-based access control and analytics charts with report generation &lt; 5s.</p>
+          <div class="p-tags">
+            <span>Flutter</span><span>Firestore</span><span>Firebase Auth</span><span>Dart</span>
+          </div>
+          <button class="btn btn-glass btn-full" onclick="openProjectModal('erp')">
+            <i class="fas fa-sliders-h"></i> Interactive Details
+          </button>
+        </div>
+
+        <!-- Drug Peddler Tracker -->
+        <div class="project-card glass-panel" data-category="ai security">
+          <div class="p-card-top">
+            <i class="fas fa-user-shield p-icon"></i>
+            <span class="p-badge">SIH '24 Top 3</span>
+          </div>
+          <h3>Drug Peddler Tracking System</h3>
+          <p class="p-sub">SIH Department Hackathon Shortlisted Solution</p>
+          <p class="p-desc">Designed NLP pipeline for illicit communication keyword extraction & graph analysis to map social network peddlers.</p>
+          <div class="p-tags">
+            <span>Python</span><span>NLP</span><span>Graph Analysis</span><span>Scikit-learn</span>
+          </div>
+          <button class="btn btn-glass btn-full" onclick="openProjectModal('drugtracker')">
+            <i class="fas fa-sliders-h"></i> Interactive Details
+          </button>
+        </div>
+
+        <!-- Network Security Lab -->
+        <div class="project-card glass-panel" data-category="security">
+          <div class="p-card-top">
+            <i class="fas fa-network-wired p-icon"></i>
+            <span class="p-badge">Wipro COE</span>
+          </div>
+          <h3>Network Anomaly & Pentesting Lab</h3>
+          <p class="p-sub">Live Packet Inspection & Vulnerability Assessment</p>
+          <p class="p-desc">Inspected network traffic with Wireshark to identify 3+ anomalies. Executed SQLi, XSS, and CSRF attacks on DVWA.</p>
+          <div class="p-tags">
+            <span>Wireshark</span><span>DVWA</span><span>VirtualBox</span><span>Cisco Tracer</span>
+          </div>
+          <button class="btn btn-glass btn-full" onclick="openProjectModal('securitylab')">
+            <i class="fas fa-sliders-h"></i> Interactive Details
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & DSA DASHBOARD -->
+    <section id="dsa-skills" class="section-padding">
+      <div class="section-title-wrap">
+        <span class="sub-heading">// TECHNICAL PROFICIENCY</span>
+        <h2>DSA & Tech Stack Matrix</h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="dsa-grid">
+        <!-- LeetCode Interactive Radar Card -->
+        <div class="glass-panel dsa-card">
+          <div class="dsa-header">
+            <i class="fas fa-code-branch"></i>
+            <div>
+              <h3>Competitive Problem Solving</h3>
+              <span class="dsa-handle">LeetCode: @jujjwal280 (350+ Solved)</span>
             </div>
           </div>
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>MoneyMinder</h3>
-              <p>Click to learn more</p>
-              <i class="fas fa-arrow-right"></i>
+          <div class="dsa-topics">
+            <div class="topic-box">
+              <span class="t-name">Dynamic Programming</span>
+              <div class="t-bar"><div class="t-fill" style="width: 85%;"></div></div>
+            </div>
+            <div class="topic-box">
+              <span class="t-name">Trees & Graphs</span>
+              <div class="t-bar"><div class="t-fill" style="width: 80%;"></div></div>
+            </div>
+            <div class="topic-box">
+              <span class="t-name">Arrays & Two Pointers</span>
+              <div class="t-bar"><div class="t-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="topic-box">
+              <span class="t-name">Stacks, Queues & Linked Lists</span>
+              <div class="t-bar"><div class="t-fill" style="width: 90%;"></div></div>
             </div>
           </div>
         </div>
 
-        <div class="project-card" data-category="ai" onclick="showPopup('popup-fingerCount')">
-          <div class="project-image">
-            <i class="fas fa-hand-paper"></i>
-          </div>
-          <div class="project-content">
-            <h3>Finger Count</h3>
-            <p>Real-time finger counting application using computer vision with OpenCV and TensorFlow.</p>
-            <div class="project-tech">
-              <span class="tech-tag">OpenCV</span>
-              <span class="tech-tag">TensorFlow</span>
-              <span class="tech-tag">Python</span>
+        <!-- Tech Categories -->
+        <div class="skills-categories-wrap">
+          <div class="skill-cat-box glass-panel">
+            <h4><i class="fas fa-laptop-code"></i> Languages & Frameworks</h4>
+            <div class="pill-group">
+              <span class="s-pill">C / C++</span>
+              <span class="s-pill">Python</span>
+              <span class="s-pill">Dart</span>
+              <span class="s-pill">SQL</span>
+              <span class="s-pill">Flutter</span>
+              <span class="s-pill">Firebase</span>
             </div>
           </div>
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>Finger Count</h3>
-              <p>Click to learn more</p>
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="security" onclick="showPopup('popup-cyberSecLab')">
-          <div class="project-image">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <div class="project-content">
-            <h3>Cybersecurity Lab</h3>
-            <p>Comprehensive packet analysis and web security testing using Wireshark and DVWA.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Wireshark</span>
-              <span class="tech-tag">DVWA</span>
-              <span class="tech-tag">Security</span>
+          <div class="skill-cat-box glass-panel">
+            <h4><i class="fas fa-brain"></i> AI / ML & Tools</h4>
+            <div class="pill-group">
+              <span class="s-pill">Scikit-learn</span>
+              <span class="s-pill">ARIMA</span>
+              <span class="s-pill">LSTM</span>
+              <span class="s-pill">Keras / TensorFlow</span>
+              <span class="s-pill">Pandas / NumPy</span>
+              <span class="s-pill">Git / GitHub</span>
+              <span class="s-pill">Figma</span>
             </div>
           </div>
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>Cybersecurity Lab</h3>
-              <p>Click to learn more</p>
-              <i class="fas fa-arrow-right"></i>
+
+          <div class="skill-cat-box glass-panel">
+            <h4><i class="fas fa-shield-alt"></i> Cybersecurity & Networking</h4>
+            <div class="pill-group">
+              <span class="s-pill">Wireshark</span>
+              <span class="s-pill">DVWA</span>
+              <span class="s-pill">Cisco Packet Tracer</span>
+              <span class="s-pill">VirtualBox</span>
+              <span class="s-pill">CCNA Essentials</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="content-section" tabindex="-1">
-      <div class="section-header">
-        <h2>Skills & Technologies</h2>
-        <div class="section-line"></div>
+    <!-- EXPERIENCE & LEADERSHIP ACCORDION SECTION -->
+    <section id="experience" class="section-padding">
+      <div class="section-title-wrap">
+        <span class="sub-heading">// TIMELINE</span>
+        <h2>Experience & Leadership</h2>
+        <div class="heading-line"></div>
       </div>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3>Frontend</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <i class="fab fa-html5"></i>
-              <span>HTML5</span>
-              <div class="skill-level" data-level="90"></div>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-css3-alt"></i>
-              <span>CSS3</span>
-              <div class="skill-level" data-level="85"></div>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-js"></i>
-              <span>JavaScript</span>
-              <div class="skill-level" data-level="80"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Mobile</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <i class="fas fa-mobile-alt"></i>
-              <span>Flutter</span>
-              <div class="skill-level" data-level="85"></div>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-android"></i>
-              <span>Android</span>
-              <div class="skill-level" data-level="75"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>AI/ML</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <i class="fab fa-python"></i>
-              <span>Python</span>
-              <div class="skill-level" data-level="90"></div>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-brain"></i>
-              <span>TensorFlow</span>
-              <div class="skill-level" data-level="70"></div>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-eye"></i>
-              <span>OpenCV</span>
-              <div class="skill-level" data-level="75"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Backend</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <i class="fas fa-fire"></i>
-              <span>Firebase</span>
-              <div class="skill-level" data-level="80"></div>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-shield-alt"></i>
-              <span>Cybersecurity</span>
-              <div class="skill-level" data-level="70"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="experience" class="content-section" tabindex="-1">
-      <div class="section-header">
-        <h2>Experience & Education</h2>
-        <div class="section-line"></div>
+      <div class="experience-tabs">
+        <button class="exp-tab-btn active" onclick="switchExpTab('technical')">Technical Roles</button>
+        <button class="exp-tab-btn" onclick="switchExpTab('leadership')">Leadership & Campus</button>
       </div>
-      <div class="timeline">
+
+      <!-- Technical Timeline -->
+      <div id="tab-technical" class="timeline-container exp-tab-content active">
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>B.Tech AI & ML</h3>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <span class="time-badge">Jun 2025 - Jul 2025</span>
+            <h3>Network Security Analyst Intern</h3>
+            <h4>Wipro Centre of Excellence (COE) | KIET, Ghaziabad</h4>
+            <ul>
+              <li>Inspected live network traffic using Wireshark and detected 3+ anomalies.</li>
+              <li>Engineered vulnerability assessment reports and executed penetration testing on DVWA for SQLi, XSS, and CSRF attacks.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <span class="time-badge">Feb 2025 - Aug 2025</span>
+            <h3>Core CS & Advanced DSA Trainee</h3>
+            <h4>Departmental Training & IIPC | KIET</h4>
+            <ul>
+              <li>Completed intensive 21-day training programs in competitive problem solving, OS, DBMS, DAA, and Computer Networks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership Timeline -->
+      <div id="tab-leadership" class="timeline-container exp-tab-content">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <span class="time-badge">2022 - Present</span>
+            <h3>Billiards Team Captain & Sports Secretary</h3>
             <h4>KIET Group of Institutions</h4>
-            <span class="timeline-date">2021 - Present</span>
-            <p>Pursuing Bachelor's in Artificial Intelligence and Machine Learning with focus on practical applications
-              and research.</p>
+            <ul>
+              <li>Managed college billiards team selection, tournament scheduling, and team strategy across inter-college tournaments.</li>
+            </ul>
           </div>
         </div>
+
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Mobile App Developer</h3>
-            <h4>Freelance Projects</h4>
-            <span class="timeline-date">2022 - Present</span>
-            <p>Developed multiple mobile applications using Flutter and Firebase, focusing on user experience and
-              performance.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Cybersecurity Research</h3>
-            <h4>Academic Projects</h4>
-            <span class="timeline-date">2023 - Present</span>
-            <p>Conducted research on network security, packet analysis, and web application vulnerabilities.</p>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <span class="time-badge">2023 - Present</span>
+            <h3>Club Lead & Event Organiser</h3>
+            <h4>KIET Billiards Club</h4>
+            <ul>
+              <li>Organized intra and inter-college sports tournaments; handled participant registrations and logistics for 30+ attendees.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="content-section" tabindex="-1">
-      <div class="section-header">
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+      <div class="section-title-wrap">
+        <span class="sub-heading">// CONNECT</span>
         <h2>Get In Touch</h2>
-        <div class="section-line"></div>
+        <div class="heading-line"></div>
       </div>
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-item">
+
+      <div class="contact-grid">
+        <div class="contact-info-card glass-panel">
+          <h3>Direct Channels</h3>
+          <p>Feel free to reach out for software development or AI/ML roles.</p>
+
+          <div class="c-detail">
             <i class="fas fa-envelope"></i>
             <div>
-              <h3>Email</h3>
-              <a href="mailto:ujjwal.jain@example.com">ujjwal.jain@example.com</a>
+              <span>Email</span>
+              <a href="mailto:jujjwal280@gmail.com">jujjwal280@gmail.com</a>
             </div>
           </div>
-          <div class="contact-item">
+
+          <div class="c-detail">
             <i class="fas fa-phone"></i>
             <div>
-              <h3>Phone</h3>
-              <a href="tel:+911234567890">+91 12345 67890</a>
+              <span>Phone</span>
+              <a href="tel:+916397650021">+91 63976 50021</a>
             </div>
           </div>
-          <div class="contact-item">
+
+          <div class="c-detail">
             <i class="fas fa-map-marker-alt"></i>
             <div>
-              <h3>Location</h3>
-              <span>Delhi-NCR, India</span>
+              <span>Location</span>
+              <span>Saharanpur / Ghaziabad, UP, India</span>
             </div>
           </div>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+
+          <div class="social-bar">
+            <a href="https://github.com/jujjwal280" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/jujjwal280" target="_blank" rel="noopener" title="LeetCode"><i class="fas fa-code"></i></a>
+            <a href="https://linkedin.com/in/jujjwal280" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://ieeexplore.ieee.org/document/11468787" target="_blank" rel="noopener" title="IEEE Xplore"><i class="fas fa-graduation-cap"></i></a>
           </div>
         </div>
-        <form id="contact-form" class="contact-form" aria-label="Contact form">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input id="email" name="email" type="email" required />
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input id="subject" name="subject" type="text" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-submit">
-            <span>Send Message</span>
-            <i class="fas fa-paper-plane"></i>
-          </button>
-          <div id="form-message" role="alert" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
 
-    <section id="resume" class="content-section" tabindex="-1">
-      <div class="section-header">
-        <h2>Resume</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="resume-container">
-        <p>Download my complete resume to learn more about my experience and qualifications.</p>
-        <a href="assets/UjjwalJain_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">
-          <i class="fas fa-download"></i>
-          <span>Download Resume</span>
-        </a>
+        <form id="contact-form" class="glass-panel contact-form">
+          <h3>Send Message</h3>
+          <div class="input-field">
+            <input type="text" id="c-name" required placeholder="Your Name" />
+          </div>
+          <div class="input-field">
+            <input type="email" id="c-email" required placeholder="Your Email" />
+          </div>
+          <div class="input-field">
+            <input type="text" id="c-subject" required placeholder="Subject" />
+          </div>
+          <div class="input-field">
+            <textarea id="c-msg" rows="4" required placeholder="Your Message..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-glow btn-full">
+            <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+          </button>
+          <div id="c-response"></div>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- Overlay for popups -->
-  <div id="overlay" aria-hidden="true"></div>
-
-  <!-- Enhanced Popups -->
-  <div class="popup" id="popup-moneyMinder" role="dialog" aria-modal="true" aria-labelledby="popup-moneyMinder-title"
-    tabindex="-1">
-    <button class="popup-close" aria-label="Close popup" onclick="closePopup('popup-moneyMinder')">&times;</button>
-    <div class="popup-header">
-      <i class="fas fa-wallet"></i>
-      <h3 id="popup-moneyMinder-title">MoneyMinder: Personal Finance Budgeting App</h3>
-    </div>
-    <div class="popup-content">
-      <p>A comprehensive personal finance application built with Flutter and Firebase, featuring AI-driven expense
-        prediction using ARIMA models. The app helps users manage their finances intelligently with smart forecasting
-        capabilities.</p>
-      <div class="popup-features">
-        <h4>Key Features:</h4>
-        <ul>
-          <li>Real-time expense tracking</li>
-          <li>AI-powered spending predictions</li>
-          <li>Budget management and alerts</li>
-          <li>Cloud synchronization</li>
-          <li>Beautiful, intuitive UI</li>
-        </ul>
-      </div>
-      <div class="popup-tech">
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">Firebase</span>
-        <span class="tech-tag">ARIMA</span>
-        <span class="tech-tag">Dart</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="popup" id="popup-fingerCount" role="dialog" aria-modal="true" aria-labelledby="popup-fingerCount-title"
-    tabindex="-1">
-    <button class="popup-close" aria-label="Close popup" onclick="closePopup('popup-fingerCount')">&times;</button>
-    <div class="popup-header">
-      <i class="fas fa-hand-paper"></i>
-      <h3 id="popup-fingerCount-title">Finger Count Detection System</h3>
-    </div>
-    <div class="popup-content">
-      <p>An advanced computer vision application that performs real-time finger counting using OpenCV and TensorFlow.
-        The system accurately detects and counts fingers in various lighting conditions and hand positions.</p>
-      <div class="popup-features">
-        <h4>Key Features:</h4>
-        <ul>
-          <li>Real-time hand detection</li>
-          <li>Accurate finger counting</li>
-          <li>Multiple hand support</li>
-          <li>Gesture recognition</li>
-          <li>Cross-platform compatibility</li>
-        </ul>
-      </div>
-      <div class="popup-tech">
-        <span class="tech-tag">OpenCV</span>
-        <span class="tech-tag">TensorFlow</span>
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Computer Vision</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="popup" id="popup-cyberSecLab" role="dialog" aria-modal="true" aria-labelledby="popup-cyberSecLab-title"
-    tabindex="-1">
-    <button class="popup-close" aria-label="Close popup" onclick="closePopup('popup-cyberSecLab')">&times;</button>
-    <div class="popup-header">
-      <i class="fas fa-shield-alt"></i>
-      <h3 id="popup-cyberSecLab-title">Cybersecurity Research Lab</h3>
-    </div>
-    <div class="popup-content">
-      <p>A comprehensive cybersecurity research project focusing on network packet analysis and web application security
-        testing. Used industry-standard tools like Wireshark and DVWA for practical security assessment.</p>
-      <div class="popup-features">
-        <h4>Key Areas:</h4>
-        <ul>
-          <li>Network packet analysis</li>
-          <li>Web application penetration testing</li>
-          <li>Vulnerability assessment</li>
-          <li>Security documentation</li>
-          <li>Ethical hacking techniques</li>
-        </ul>
-      </div>
-      <div class="popup-tech">
-        <span class="tech-tag">Wireshark</span>
-        <span class="tech-tag">DVWA</span>
-        <span class="tech-tag">Kali Linux</span>
-        <span class="tech-tag">Security Testing</span>
+  <!-- DYNAMIC INTERACTIVE MODAL FOR PROJECTS -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-window glass-panel">
+      <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+      <div id="modal-content">
+        <!-- Injected dynamically via JS -->
       </div>
     </div>
   </div>
